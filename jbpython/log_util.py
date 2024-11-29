@@ -10,6 +10,10 @@ _DATE_FORMAT = "%y-%m-%d %H:%M:%S"
 _TIME_CONVERTER = time.gmtime
 
 
+def configure_logging():
+    logging.basicConfig(level=logging.INFO, format=_LOG_FORMAT, datefmt=_DATE_FORMAT)
+
+
 def get_logger(obj: Any, file_handle: Optional[str] = None) -> logging.Logger:
     if isinstance(obj, str):
         return _get_logger(obj, file_handle)
