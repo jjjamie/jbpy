@@ -5,6 +5,7 @@ import time
 
 FORMAT = "%Y-%m-%dT%H:%M:%S.%f"
 
+
 class Timing(NamedTuple):
     start: dt.datetime
     end: dt.datetime
@@ -19,6 +20,7 @@ class Timing(NamedTuple):
 
     def to_json(self) -> Dict[str, Any]:
         return {"start": self.start.strftime(FORMAT), "end": self.end.strftime(FORMAT), "seconds": self.seconds}
+
     
 class Timer:
     def __init__(self, name: Optional[str] = None, logger: Optional[logging.Logger] = None) -> None:
@@ -36,5 +38,5 @@ class Timer:
         self.interval = self.end - self.start
         self.timing = Timing(self.start_time, self.end_time, self.interval)
         if self._log is not None:
-            self._log.info(f"{self._name or 'Timer'}: {self.interval}")
+            self._log.info(f"{self._name or 'Timer'}: {self.interval} seconds")
             
