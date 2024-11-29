@@ -1,8 +1,8 @@
-import sys
-import logging
-import time
 import inspect
-from typing import Optional, Any
+import logging
+import sys
+import time
+from typing import Any, Optional
 
 _DEFAULT_LOG_LEVEL = logging.INFO
 _LOG_FORMAT = "%(asctime)s.%(msecs)03dZ %(levelname)-8s %(name)s - %(message)s"
