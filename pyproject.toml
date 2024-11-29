@@ -5,3 +5,8 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = []
+
+
+[tool.ruff]
+include = ["pyproject.toml", "src/**/*.py", "scripts/**/*.py"]
+line-length = 120
